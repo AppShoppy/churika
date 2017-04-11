@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Empty</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    
+        <script src="js/angular.min.js"></script>
+    
+    <script>
+     // create angular app
+    var validationApp = angular.module('validationApp', []);
+
+    // create angular controller
+    validationApp.controller('mainController', function($scope) {
+
+        // function to submit the form after all validation has occurred            
+        $scope.submitForm = function() {
+
+            // check to make sure the form is completely valid
+            if ($scope.userForm.$valid) {
+                alert('our form is amazing');
+            }
+
+        };
+
+    });    
+    </script>
+
+</head>
+
+<body ng-app="validationApp" ng-controller="mainController">
+    <!-- Content Section -->
+    <section class="success">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 pt30 text-center">
+                  <div class="empty-warp">
+                    <span class="title">Type Name of Order</span>
+                    <div class="pull-right close">X</div>
+                    
+                    <div class="middle-warp">
+                      <img src="images/ban-img.png">
+                      <h4>No teams or departments to show</h4>
+                      <button class="btn employee-btn"><a href="#">Go to Employee Managment</a></button>
+                    </div>
+                    
+                    <div class="footer mt50">
+                      <h5>Type a Note</h5>
+                      <h4>Type your note here...</h4>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+   
+</body>
+
+</html>

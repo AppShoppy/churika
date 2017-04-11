@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Success</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngMask/3.1.1/ngMask.min.js"></script>
+    
+    <script>
+     var validationApp = angular.module('validationApp', ['ngMask']);
+
+        validationApp.controller('mainController', function($scope) {
+            $scope.selectPlans = null;
+            $scope.clickEvent = function(event){
+                angular.element(document.querySelectorAll('.plans-card')).removeClass('active');
+                var ids = $(event.currentTarget).data('id');
+                var vals = $(event.currentTarget).data('value');
+                $(event.currentTarget).addClass('active');
+                $scope.selectPlans = vals;
+            }
+            $scope.submitForm = function(isValid) {
+                if (isValid) {
+                    alert('Form submitted!');
+                }
+            };
+        });
+        
+      $(document).ready(function() {
+        $.stickysidebarscroll("#last-2",{offset: {top: 0, bottom: 0,}});
+      });   
+    </script>
+
+</head>
+
+<body ng-app="validationApp" ng-controller="mainController">
+    <!-- Content Section -->
+    <section class="success">
+        <div class="container-fluid">
+            <div class="row">
+              <div id="last-2">
+                <div class="col-lg-3 gray-bg pt30 side-bar">
+                    <div class="logo text-uppercase">churika</div>
+                    
+                    <div class="user-content">
+                      <h3>Good choice for us !</h3>
+                      <p>Churika has solved or  food problems <br> since we found theme.</p>
+                    </div>
+                    
+                    <div class="user">
+                      <div class="col-md-3 p0">
+                        <img src="images/user-img.png">
+                      </div>
+                      <div class="col-md-9 p0">
+                        <h4>Michal Brown</h4>
+                        <p><em>CEO of Dropbox</em></p>
+                      </div>
+                    </div>
+                    
+                    <div class="row foot-img">
+                      <img src="images/maker-left-img.jpg">
+                    </div>
+                 </div>
+                </div>
+                <div class="col-lg-9 pt30 success-content text-center">
+                   <div class="success-wrap">
+                      <img src="images/Success-img.png">
+                      <h3>Your account has been created</h3>
+                      <p>You'll be redirect to Churika Dashbord.</p>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/jquery.sticky-sidebar-scroll.min.js"></script>
+   
+</body>
+
+</html>
